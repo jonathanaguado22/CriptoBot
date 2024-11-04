@@ -33,3 +33,21 @@ print(appl_data[['Close', 'SMA', 'EMA']].dropna().tail())
 appl_data[['Close', 'SMA', 'EMA']].plot(figsize=(10, 6))
 plt.legend()
 plt.show()
+
+#%% Bandas de Bolinger
+if isinstance(appl_data.columns, pd.MultiIndex):
+    appl_data.columns = appl_data.columns.get_level_values(0)
+# %% Calcular Bandas de Bollinger
+
+bbands = ta.bbands(appl_data['Close'], length=20)
+
+appl_data['upper_band'] = bbands['BBU_20_2.0']
+appl_data['middle_band'] = bbands['BBM_20_2.0']
+appl_data['lower_band'] = bbands['BBL_20_2.0']
+
+# Mostrar los datos de Bandas de Bollinger calculadas
+print(appl_data[['Close', 'upper_band', 'middle_band', 'lower_band']].head(10))
+print(appl_data[['Close', 'upper_band', 'middle_band', 'lower_band']].dropna().tail())
+
+appl_data[['Close', 'upper_band','middle_band','lower_band' ]].plot(figsize=(15, 15))
+plt.show()
