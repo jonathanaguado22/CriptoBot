@@ -50,4 +50,12 @@ print(appl_data[['Close', 'upper_band', 'middle_band', 'lower_band']].head(10))
 print(appl_data[['Close', 'upper_band', 'middle_band', 'lower_band']].dropna().tail())
 
 appl_data[['Close', 'upper_band','middle_band','lower_band' ]].plot(figsize=(15, 15))
+
+plt.show()
+# %% RSI
+
+appl_data['RSI'] = ta.rsi(appl_data['Close'], timeperiod=14)
+
+appl_data[['RSI']].plot(figsize=(15, 15))
+
 plt.show()
