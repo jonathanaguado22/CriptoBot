@@ -1,6 +1,9 @@
 # Bot para el mercado de criptomoneda con Binance
 from pprint import pprint
 from binance.spot import Spot
+from numpy import integer
+from sqlalchemy import INTEGER
+
 import config
 
 
@@ -25,7 +28,9 @@ class BotBinance:
 
 
 bot = BotBinance("btcusdt", "6h")
-pprint()
+price_bitcoin = bot.binance_spot().ticker_price("BTCUSDT")['price']
+bitcoin = float(price_bitcoin)
+pprint(bitcoin)
 
 
 
