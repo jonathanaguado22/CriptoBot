@@ -13,6 +13,7 @@ class BotBinance:
      __api_secret = config.API_SECRET
      binance_client = Spot(api_key = __api_key, api_secret = __api_secret)
      price_bitcoin = float(binance_client.ticker_price("BTCUSDT")["price"])
+     price_solana = float(binance_client.ticker_price("SOLUSDT")["price"])
 
      def __init__(self, pair: str, temporality: str):
 
@@ -36,7 +37,7 @@ class BotBinance:
 
 bot = BotBinance("btcusdt", "6h")
 
-pprint(bot.price_bitcoin)
+pprint(bot.price_solana)
 
 
 
