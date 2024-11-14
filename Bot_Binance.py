@@ -29,7 +29,7 @@ class BotBinance:
 
      def balances_positive(self) -> list[dict]:
 
-         return [ cryptos for cryptos in self.binance_spot().account()['balances'] if float(cryptos['free']) > 0]
+         return [ cryptos for cryptos in self.binance_client.account()['balances'] if float(cryptos['free']) > 0]
 
 
 
