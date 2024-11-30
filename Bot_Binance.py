@@ -35,9 +35,9 @@ class BotBinance:
 
 
 
-bot = BotBinance("btcusdt", "6h")
+bot = BotBinance("btcusdt", "8h")
 
-pprint(bot.price_solana)
+pprint(bot.price_bitcoin)
 
 
 
