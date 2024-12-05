@@ -12,4 +12,7 @@ class Strategy:
         self.open = data.get("Open")
         self.high = data.get("High")
 
+    def ema(self):
+        return ta.ema(self.close, timeperiod=15)
+
         
