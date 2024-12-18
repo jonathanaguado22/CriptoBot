@@ -3,7 +3,6 @@ from pprint import pprint
 from binance.spot import Spot
 from numpy import integer
 from sqlalchemy import INTEGER
-
 import config
 
 
@@ -38,6 +37,8 @@ class BotBinance:
 bot = BotBinance("btcusdt", "8h")
 
 pprint(bot.price_bitcoin)
+
+pprint(Strategy())
 
 
 
